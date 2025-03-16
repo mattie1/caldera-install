@@ -68,27 +68,25 @@ http://<your_vps_ip>:8888
 
 ### Start the server:
 
-Navigate to the `caldera` directory:
-
 ```bash
+# Navigate to the caldera directory
 cd caldera
-```
 
-Activate the virtual environment:
-
-```bash
+# Activate the virtual environment
 source venv/bin/activate
-```
 
-Run the server:
-
-```bash
+# Run the server
 python3 server.py --insecure --build
 ```
 
 ### Stop the server:
 
-Press `Ctrl + C` in the terminal window where the server is running.
+```bash
+# Press Ctrl + C to stop the server
+
+# Exit the virtual environment
+deactivate
+```
 
 ---
 
