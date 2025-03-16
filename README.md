@@ -6,7 +6,7 @@ A complete installation script to set up the **MITRE CALDERA** adversary emulati
 
 ---
 
-## 📌 🚨 **IMPORTANT** 🚨
+## 🚨 **IMPORTANT** 
 
 > At the time of posting this, the latest version of Caldera is **5.2.0**. To clone the installation script from this repository:
 
@@ -43,10 +43,15 @@ Run the installation script:
 ## 🛠️ **What this script does**
 
 ✅ Installs essential packages
+
 ✅ Creates a virtual environment to handle Python dependencies
+
 ✅ Installs Go and Node.js
+
 ✅ Installs Docker and UPX manually (due to Debian repository issues)
+
 ✅ Updates Caldera configuration with your VPS IP
+
 ✅ Starts the Caldera server
 
 ---
@@ -112,9 +117,4 @@ caldera/
 
 ## 🎯 **Final Thoughts**
 
-This script was tested on **Debian 12.4.0** and aims to automate the entire CALDERA installation process. Enjoy building your adversary emulation environment! 🎭
-
----
-
-🔥 **Happy Hacking!** 👾
-
+This script was tested on Debian 12.4.0 and aims to automate the entire CALDERA installation process. Enjoy building your adversary emulation environment! 🎭
