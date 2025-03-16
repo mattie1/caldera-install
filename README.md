@@ -11,7 +11,19 @@ A complete installation script to set up the **MITRE CALDERA** adversary emulati
 > At the time of posting this, the latest version of Caldera is **5.2.0**. To clone the installation script from this repository:
 
 ```bash
-git clone https://github.com/mattie1/caldera-install/caldera-install.sh
+git clone https://github.com/mattie1/caldera-install.git
+```
+
+Navigate to the directory:
+
+```bash
+cd caldera-install
+```
+
+Run the installation script:
+
+```bash
+./caldera-install.sh
 ```
 
 ---
@@ -30,22 +42,6 @@ git clone https://github.com/mattie1/caldera-install/caldera-install.sh
 ✅ Installs Docker and UPX manually (due to Debian repository issues)
 ✅ Updates Caldera configuration with your VPS IP
 ✅ Starts the Caldera server
-
----
-
-## 🚀 **Installation Steps**
-
-```bash
-./caldera.sh
-```
-
----
-
-## 🎯 **Key Fixes & Improvements**
-
-- 🛑 Resolved **"externally-managed-environment"** error with a virtual environment.
-- 🛠️ Manually installed UPX from GitHub due to Debian package unavailability.
-- ⚡ Automated Go and Node.js installation.
 
 ---
 
@@ -73,7 +69,7 @@ Press `Ctrl + C` in the terminal window where the server is running.
 
 ## 🛑 **Troubleshooting**
 
-If you encounter issues with missing dependencies, double-check the logs and ensure you have internet connectivity.
+If you encounter issues with missing dependencies, try to manually install the packages. 
 
 ---
 
