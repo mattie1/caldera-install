@@ -68,6 +68,20 @@ http://<your_vps_ip>:8888
 
 ### Start the server:
 
+Navigate to the `caldera` directory:
+
+```bash
+cd caldera
+```
+
+Activate the virtual environment:
+
+```bash
+source venv/bin/activate
+```
+
+Run the server:
+
 ```bash
 python3 server.py --insecure --build
 ```
