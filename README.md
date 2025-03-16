@@ -1,68 +1,83 @@
-🛡️ CALDERA Installation Guide
+# 🛡️ **CALDERA Installation Guide (Debian 12.4.0)**
 
-📌 Overview
+## ⚡️ **Overview**
+A complete installation script to set up the **MITRE CALDERA** adversary emulation platform on **Debian 12.4.0**.  
 
-This script automates the installation of MITRE CALDERA on Debian 12.4.0.
+Please note that you can install this on any distro, but I have found the above version to work after multiple failures. 
 
-✅ Prerequisites
+---
 
-Debian 12.4.0
+## 📌 🚨 **IMPORTANT** 🚨
 
-Sudo privileges
+> At the time of posting this, the latest version of Caldera is **5.2.0**, so please feel free to use the relevant branch name:
 
-⚡ Installation Steps
+```bash
+git clone https://github.com/mitre/caldera.git --recursive --branch 5.2.0
+```
 
-1️⃣ Update System
+---
 
-sudo apt-get update && sudo apt-get upgrade -y
+## ✅ **Prerequisites**
+- Debian 12.4.0
+- Sudo privileges
+- Stable internet connection
 
-2️⃣ Install Essential Packages
+## 🛠️ **What this script does**
+✅ Installs essential packages
+✅ Creates a virtual environment to handle Python dependencies
+✅ Installs Go and Node.js
+✅ Installs Docker and UPX manually (due to Debian repository issues)
+✅ Updates Caldera configuration with your VPS IP
+✅ Starts the Caldera server
 
-sudo apt-get install -y python3 python3-pip python3-venv git openssl libssl-dev curl
+---
 
-3️⃣ Clone the CALDERA Repository
+## 🚀 **Installation Steps**
 
-git clone https://github.com/mitre/caldera.git --recursive
+```bash
+./caldera.sh
+```
 
-4️⃣ Create Virtual Environment & Install Dependencies
+---
 
-cd caldera
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
+## 🎯 **Key Fixes & Improvements**
+- 🛑 Resolved **"externally-managed-environment"** error with a virtual environment.
+- 🛠️ Manually installed UPX from GitHub due to Debian package unavailability.
+- ⚡ Automated Go and Node.js installation.
 
-5️⃣ Install Go
+---
 
-GO_VERSION="1.21.1"
-wget https://go.dev/dl/go$GO_VERSION.linux-amd64.tar.gz
-sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go$GO_VERSION.linux-amd64.tar.gz
-rm go$GO_VERSION.linux-amd64.tar.gz
-export PATH=$PATH:/usr/local/go/bin
+## 🌐 **Access Caldera Web Interface**
 
-6️⃣ Install Node.js & npm
+```bash
+http://<your_vps_ip>:8888
+```
 
-curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
-sudo apt-get install -y nodejs
+---
 
-7️⃣ Install Docker Module for Python
+## 🛑 **Troubleshooting**
+If you encounter issues with missing dependencies, check the package that's failed to install, try to manually install it and then re run the script.
 
-pip install docker
+---
 
-8️⃣ Install UPX (Manually from GitHub)
+## 📂 **Directory Structure**
 
-wget https://github.com/upx/upx/releases/download/v5.0.0/upx-5.0.0-amd64_linux.tar.xz
-tar -xvf upx-5.0.0-amd64_linux.tar.xz
-sudo mv upx-5.0.0-amd64_linux/upx /usr/local/bin/
-rm -rf upx-5.0.0-amd64_linux upx-5.0.0-amd64_linux.tar.xz
+```bash
+caldera/
+│
+├── conf/
+├── plugins/
+├── server.py
+├── venv/
+└── caldera.sh
+```
 
-9️⃣ Update VPS IP Address
+---
 
-VPS_IP=$(curl -s ip.me)
-sed -i "s|http://[0-9\.]*:8888|http://$VPS_IP:8888|g" conf/default.yml
-sed -i "s|http://localhost:8888|http://$VPS_IP:8888|g" conf/default.yml
+## 🎯 **Final Thoughts**
+This script was tested on **Debian 12.4.0** and aims to automate the entire CALDERA installation process. Enjoy building your adversary emulation environment! 🎭
 
-🔟 Start CALDERA Server
+---
 
-python3 server.py --insecure --build
+🔥 **Happy Hacking!** 👾
 
-🎉 Done! Access CALDERA at http://<your_vps_ip>:8888
