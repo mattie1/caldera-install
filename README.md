@@ -1,4 +1,4 @@
-# 🛡️ **CALDERA Installation Guide (Debian 12.4.0)**
+# 🛡️ **CALDERA Installation Guide **
 
 ## ⚡️ **Overview**
 
@@ -6,9 +6,15 @@ A complete installation script to set up the **MITRE CALDERA** adversary emulati
 
 ---
 
-## 📌 🚨 **IMPORTANT** 🚨
+## 📌 What is Caldera? 
+
+> Caldera™ is an adversary emulation platform designed to easily run autonomous breach-and-attack simulation exercises. It can also be used to run manual red-team engagements or automated incident response. Caldera is built on the MITRE ATT&CK™ framework and is an active research project at MITRE.
+
+##  🚨 Installation Guide  🚨
 
 > At the time of posting this, the latest version of Caldera is **5.2.0**. To clone the installation script from this repository:
+
+### Please follow the steps below: 
 
 ```bash
 git clone https://github.com/mattie1/caldera-install.git
@@ -18,6 +24,12 @@ Navigate to the directory:
 
 ```bash
 cd caldera-install
+```
+
+Set executable permissions to the installation script:
+
+```bash
+sudo chmod +x caldera-install.sh
 ```
 
 Run the installation script:
@@ -69,7 +81,7 @@ Press `Ctrl + C` in the terminal window where the server is running.
 
 ## 🛑 **Troubleshooting**
 
-If you encounter issues with missing dependencies, try to manually install the packages. 
+If you encounter issues with missing dependencies, double-check the logs and ensure you have internet connectivity. For missing packages, manually search for installation commands (Google is your friend!).
 
 ---
 
