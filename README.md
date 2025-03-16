@@ -1,4 +1,4 @@
-# 🛡️ **CALDERA Installation Guide (Debian 12.4.0)**
+# 🛡️ **CALDERA Installation Guide**
 
 ## ⚡️ **Overview**
 
